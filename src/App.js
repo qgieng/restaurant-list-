@@ -6,11 +6,14 @@ import Result from './components/Result';
 
 function App() {
   const [searchField, setSearchField] = useState('');
+  const [searchLocation, setSearchLocation] = useState('');
+  var search = {searchField, setSearchField}
+  var location = {searchLocation, setSearchLocation}
   return (
     <div>
       <Title title="Yelp Restaurant List"/>
-      <Form state ={searchField} setState = {setSearchField}/>
-      <Result state={searchField} setState={setSearchField}/>
+      <Form search={search} location ={location}/>
+      <Result search={search} location={location}/>
     </div>
   );
 }

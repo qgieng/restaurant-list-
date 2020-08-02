@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Result = ({state,setState}) =>{
+const Result = ({search,location}) =>{
     const yelp_base = 'https://api.yelp.com/v3/businesses';
     const yelp_auth = process.env.YELP_API_KEY;
-    console.log('result state' ,state)
+
+    const {searchField, setSearchField} = search;
+    const {searchLocation,setSearchLocation} = location;
+    
     return(
         <div>
 

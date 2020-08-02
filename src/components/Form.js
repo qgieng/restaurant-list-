@@ -1,23 +1,25 @@
 import React, {useState} from 'react'
 
-const Form = ({ state,setState,location, setLocationState}) =>{
+const Form = ({ search,location}) =>{
+    const {searchField, setSearchField} = search
+    const {searchLocation,setSearchLocation} = location;
 
     const handleValueChange = (e)=>{
-        setState(e.target.value);
+        setSearchField(e.target.value);
     }
     const handleLocationChange = (e)=>{
-        setLocationState(e.target.value);
+        setSearchLocation(e.target.value); 
     }
     return(
         <div>
             <form>
                 <p>Search query</p>
                 <input 
-                    value = {state}
+                    value = {searchField}
                     onChange={handleValueChange}/>
                 <p>Location</p>
                 <input 
-                    value = {location}
+                    value = {searchLocation}
                     onChange={handleLocationChange}/>
             </form>
         </div>
